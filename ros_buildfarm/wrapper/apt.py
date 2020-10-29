@@ -48,7 +48,7 @@ def call_apt_update_install_clean(
     while tries < max_tries:
         if command == 'update':
             rc, _, tries = call_apt_repeatedly(
-                [command], known_error_strings, max_tries - tries,
+                [command, '-o Acquire::AllowInsecureRepositories=true'], known_error_strings, max_tries - tries,
                 offset=tries)
             if rc != 0:
                 # abort if update was unsuccessful even after retries
