@@ -34,7 +34,7 @@ echo "PYTHONPATH=$PYTHONPATH"
 for subdir in $SUBDIRS
 do
   echo "# BEGIN SUBSECTION: $subdir: make html"
-  cd $BASE_DIR/$subdir/doc
+  cd $BASE_DIR/$subdir
   mkdir -p $OUTPUT_DIR/$subdir
   ln -s $OUTPUT_DIR/$subdir _build
   (set -x; make html)
