@@ -483,7 +483,7 @@ def add_argument_return_zero(parser):
 
 def add_argument_doc_target(parser):
     parser.add_argument(
-        '--doc-target' action='store', default='html',
+        '--doc-target', action='store', default='html',
         help='The make target to invoke when building documentation. '
              "Defaults to 'html'.")
 
