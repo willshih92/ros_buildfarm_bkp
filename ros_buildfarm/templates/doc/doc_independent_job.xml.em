@@ -78,7 +78,6 @@ if len(split) == 2:
         'echo "# BEGIN SECTION: Clone %s"' % repo_name,
         'python3 -u $WORKSPACE/ros_buildfarm/scripts/wrapper/git.py clone --depth 1 %s %s $WORKSPACE/repositories/%s' % (repo_url, repo_branch, repo_name),
         'git -C $WORKSPACE/repositories/%s log -n 1' % repo_name,
-        'rm -fr $WORKSPACE/repositories/%s/.git' % repo_name,
         'echo "# END SECTION"',
     ]),
 ))@
