@@ -102,6 +102,10 @@ class DocBuildFile(BuildFile):
         if self.documentation_type != DOC_TYPE_MAKE:
             assert not self.install_pip_packages
 
+        self.make_target = 'html'
+        if 'make_target' in data:
+            self.make_target = data['make_target']
+
         self.jenkins_job_label = None
         if 'jenkins_job_label' in data:
             self.jenkins_job_label = data['jenkins_job_label']
