@@ -92,7 +92,7 @@ if len(split) == 2:
     'builder_shell',
     script='\n'.join([
         'echo "# BEGIN SECTION: Clone %s"' % doc_repository_name,
-        'python3 -u $WORKSPACE/ros_buildfarm/scripts/wrapper/git.py clone --depth 1 %s %s $WORKSPACE/repositories/%s' % (doc_repository_url, doc_repository_branch, doc_repository_name),
+        'python3 -u $WORKSPACE/ros_buildfarm/scripts/wrapper/git.py clone --depth 1 --no-single-branch %s %s $WORKSPACE/repositories/%s' % (doc_repository_url, doc_repository_branch, doc_repository_name),
         'git -C $WORKSPACE/repositories/%s log -n 1' % doc_repository_name,
         'echo "# END SECTION"',
     ]),
