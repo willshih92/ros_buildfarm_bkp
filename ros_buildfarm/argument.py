@@ -481,6 +481,11 @@ def add_argument_return_zero(parser):
              'This is used for testing, and scripting. It is not generally'
              ' recommended for use.')
 
+def add_argument_doc_target(parser):
+    parser.add_argument(
+        '--doc-target' action='store', default='html',
+        help='The make target to invoke when building documentation. '
+             "Defaults to 'html'.")
 
 def check_len_action(minargs, maxargs):
     class CheckLength(argparse.Action):

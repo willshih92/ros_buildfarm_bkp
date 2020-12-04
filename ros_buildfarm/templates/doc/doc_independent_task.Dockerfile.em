@@ -50,6 +50,7 @@ ENTRYPOINT ["sh", "-c"]
 @{
 cmd = '/tmp/ros_buildfarm/scripts/doc/invoke_doc_targets.sh' + \
     ' /tmp/repositories' + \
-    ' /tmp/generated_documentation/independent/api'
+    ' /tmp/generated_documentation/independent/api' + \
+    make_target
 }@
 CMD ["@cmd"]

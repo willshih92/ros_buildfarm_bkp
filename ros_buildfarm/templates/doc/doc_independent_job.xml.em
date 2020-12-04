@@ -111,6 +111,7 @@ if len(split) == 2:
         ' --install-apt-packages ' + ' '.join(install_apt_packages) +
         ' --install-pip-packages ' + ' '.join(install_pip_packages) +
         ' ' + ' '.join(repository_args) +
+        ' --doc-target html' +
         ' --dockerfile-dir $WORKSPACE/docker_doc_independent',
         'echo "# END SECTION"',
         '',
