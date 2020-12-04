@@ -41,6 +41,7 @@ do
   pwd
   git branch -a
   cat .git/packed-refs
+  ls -l /usr/bin/python3
   (set -x; make $TARGET)
   echo "# END SUBSECTION"
   echo ""
