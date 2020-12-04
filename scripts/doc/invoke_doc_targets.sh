@@ -38,10 +38,6 @@ do
   cd $BASE_DIR/$subdir
   mkdir -p $OUTPUT_DIR/$subdir
   ln -s $OUTPUT_DIR/$subdir _build
-  pwd
-  git branch -a
-  cat .git/packed-refs
-  ls -l /usr/bin/python3
   (set -x; make $TARGET)
   echo "# END SUBSECTION"
   echo ""
