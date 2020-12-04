@@ -69,6 +69,7 @@ repo_name = os.path.splitext(os.path.basename(repo_url))[0]
 repo_branch = ''
 split = repo_url.split('#')
 if len(split) == 2:
+  repo_url = split[0]
   repo_branch = '-b ' + split[1]
 }@
 @(SNIPPET(

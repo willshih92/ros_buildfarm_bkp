@@ -85,6 +85,7 @@ doc_repository_name = os.path.splitext(os.path.basename(doc_repository_url))[0]
 doc_repository_branch = ''
 split = doc_repository_url.split('#')
 if len(split) == 2:
+  doc_repository_url = split[0]
   doc_repository_branch = '-b ' + split[1]
 }@
 @(SNIPPET(
