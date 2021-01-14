@@ -2,7 +2,9 @@
 FROM @base_image
 @[else]@
 @# same logic as in builder_check-docker.xml.em
-@[  if arch in ['i386', 'armhf', 'arm64']]@
+@[  if arch in ['armhf']]@
+FROM nuclearsandwich/@(os_name)_@arch:@os_code_name
+@[  elif arch in ['i386', 'arm64']]@
 FROM osrf/@(os_name)_@arch:@os_code_name
 @[  else]@
 FROM @os_name:@os_code_name
