@@ -1,0 +1,7 @@
+Quick hack to list packages in a given repositories
+
+Note: tuples can include distro:release:source to lits source packages:
+./list_packages.py http://repos.ros.org/repos/ros_bootstrap/ --os-name-and-os-code-name-and-arch-tuples ubuntu:xenial:amd64 
+./list_packages.py http://repos.ros.org/repos/ros_bootstrap/ --os-name-and-os-code-name-and-arch-tuples ubuntu:xenial:source
+
+There is copy/paste code in the script coming from ../status/build_repos_status_page.py that should be refactor
