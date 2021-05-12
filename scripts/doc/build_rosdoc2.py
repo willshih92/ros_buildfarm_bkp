@@ -47,7 +47,13 @@ def main(argv=sys.argv[1:]):
     clean_workspace(args.workspace_root)
 
     with Scope('SUBSECTION', 'Installing rosdoc2'):
-        pip_rc = subprocess.call(['python3', '-m', 'pip', 'install', '--no-warn-script-location', '.'], cwd=args.rosdoc2_dir)
+        pip_rc = subprocess.call(['python3',
+                                  '-m',
+                                  'pip',
+                                  'install',
+                                  '--no-warn-script-location',
+                                  '.'],
+                                 cwd=args.rosdoc2_dir)
         if pip_rc:
             return pip_rc
 
@@ -73,8 +79,7 @@ def main(argv=sys.argv[1:]):
         for pkg_path, pkg in pkgs.items():
             abs_pkg_path = os.path.join(source_space, pkg_path)
             cmd = ['rosdoc2', 'build', '--package-path', abs_pkg_path]
-            print("Running command '%s' in directory '%s'" % (' '.join(cmd), args.workspace_root))
-            rosdoc2_rc = subprocess.call(cmd, cwd=args.workspace_root, env=env)
+            subprocess.call(cmd, cwd=args.workspace_root, env=env)
 
     return 0
 

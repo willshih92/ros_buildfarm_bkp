@@ -66,7 +66,8 @@ class DocBuildFile(BuildFile):
             assert len(self.targets) == 0
 
         # repository keys and urls can only be used with doc type rosdoc
-        is_rosdoc_type = self.documentation_type == DOC_TYPE_ROSDOC or self.documentation_type == DOC_TYPE_ROSDOC2
+        is_rosdoc_type = self.documentation_type == DOC_TYPE_ROSDOC or \
+            self.documentation_type == DOC_TYPE_ROSDOC2
         assert not self.repository_keys or is_rosdoc_type
         assert not self.repository_urls or is_rosdoc_type
 
