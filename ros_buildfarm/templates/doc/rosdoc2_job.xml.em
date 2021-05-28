@@ -111,9 +111,7 @@ else:
     'builder_shell',
     script='\n'.join([
         'rm -fr $WORKSPACE/docker_generating_docker',
-        'rm -fr $WORKSPACE/generated_documentation',
         'mkdir -p $WORKSPACE/docker_generating_docker',
-        'mkdir -p $WORKSPACE/generated_documentation',
         '',
         '# monitor all subprocesses and enforce termination',
         'python3 -u $WORKSPACE/ros_buildfarm/scripts/subprocess_reaper.py $$ --cid-file $WORKSPACE/docker_generating_docker/docker.cid > $WORKSPACE/docker_generating_docker/subprocess_reaper.log 2>&1 &',
@@ -150,7 +148,6 @@ else:
         ' -v $WORKSPACE/ros_buildfarm:/tmp/ros_buildfarm:ro' +
         ' -v $WORKSPACE/rosdoc2:/tmp/rosdoc2:ro' +
         ' -v $WORKSPACE/ws:/tmp/ws' +
-        ' -v $WORKSPACE/generated_documentation:/tmp/generated_documentation' +
         ' -v $WORKSPACE/docker_doc:/tmp/docker_doc' +
         hgcache_mount_arg +
         ' rosdoc2_task_generation.%s_%s' % (rosdistro_name, doc_repo_spec.name.lower()),
@@ -183,7 +180,6 @@ else:
         ' -v $WORKSPACE/ros_buildfarm:/tmp/ros_buildfarm:ro' +
         ' -v $WORKSPACE/rosdoc2:/tmp/rosdoc2:ro' +
         ' -v $WORKSPACE/ws:/tmp/ws' +
-        ' -v $WORKSPACE/generated_documentation:/tmp/generated_documentation' +
         ' rosdoc2.%s_%s' % (rosdistro_name, doc_repo_spec.name.lower()),
         'echo "# END SECTION"',
     ]),
