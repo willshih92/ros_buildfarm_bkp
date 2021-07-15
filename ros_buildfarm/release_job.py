@@ -333,7 +333,6 @@ def _get_and_parse_distribution_cache(index, rosdistro_name, pkg_names):
     from catkin_pkg.package import parse_package_string
     from catkin_pkg.package import Dependency
     dist_cache = get_distribution_cache(index, rosdistro_name)
-    pkg_names = set(['ros_workspace']).union(pkg_names)
     cached_pkgs = {
         pkg_name: parse_package_string(pkg_xml)
         for pkg_name, pkg_xml in dist_cache.release_package_xmls.items()
