@@ -144,6 +144,7 @@ def _get_job_config(
             os.path.dirname(get_relative_credential_path())),
 
         'recipients': recipients,
+        'git_ssh_credential_id': config.git_ssh_credential_id,
     })
     job_config = expand_template(template_name, job_data)
     return job_config
