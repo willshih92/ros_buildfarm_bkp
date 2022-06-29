@@ -29,7 +29,7 @@
         <shallow>true</shallow>
         <noTags>false</noTags>
         <reference/>
-        <depth>0</depth>
+        <depth>1</depth>
         <honorRefspec>false</honorRefspec>
       </hudson.plugins.git.extensions.impl.CloneOption>
 @[else]@
