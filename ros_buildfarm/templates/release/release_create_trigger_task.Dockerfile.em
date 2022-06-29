@@ -1,10 +1,11 @@
 # generated from @template_name
 
-FROM ubuntu:xenial
+FROM ubuntu:focal
 
 VOLUME ["/var/cache/apt/archives"]
 
 ENV DEBIAN_FRONTEND noninteractive
+RUN apt update && apt install -y gnupg2
 
 @(TEMPLATE(
     'snippet/setup_locale.Dockerfile.em',
@@ -18,7 +19,7 @@ RUN useradd -u @uid -m buildfarm
     distribution_repository_keys=distribution_repository_keys,
     distribution_repository_urls=distribution_repository_urls,
     os_name='ubuntu',
-    os_code_name='xenial',
+    os_code_name='focal',
     add_source=False,
 ))@
 
@@ -33,7 +34,7 @@ RUN echo "@today_str"
 @(TEMPLATE(
     'snippet/install_python3.Dockerfile.em',
     os_name='ubuntu',
-    os_code_name='xenial',
+    os_code_name='focal',
 ))@
 
 RUN python3 -u /tmp/wrapper_scripts/apt.py update-install-clean -q -y python3-empy python3-pip python3-rosdistro-modules python3-yaml
