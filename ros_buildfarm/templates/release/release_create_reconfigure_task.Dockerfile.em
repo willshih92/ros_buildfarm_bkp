@@ -5,6 +5,7 @@ FROM ubuntu:focal
 VOLUME ["/var/cache/apt/archives"]
 
 ENV DEBIAN_FRONTEND noninteractive
+RUN apt update && apt install -y gnupg2
 
 @(TEMPLATE(
     'snippet/setup_locale.Dockerfile.em',
