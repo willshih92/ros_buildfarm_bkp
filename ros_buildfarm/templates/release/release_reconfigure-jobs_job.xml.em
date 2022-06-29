@@ -40,7 +40,7 @@
     git_ssh_credential_id=git_ssh_credential_id,
 ))@
   <scmCheckoutRetryCount>2</scmCheckoutRetryCount>
-  <assignedNode>agent_on_master</assignedNode>
+  <!--assignedNode>agent_on_master</assignedNode-->
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
