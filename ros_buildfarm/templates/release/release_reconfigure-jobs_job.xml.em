@@ -45,12 +45,12 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers>
+  <!--triggers>
 @(SNIPPET(
     'trigger_timer',
     spec='0 23 * * *',
 ))@
-  </triggers>
+  </triggers-->
   <concurrentBuild>false</concurrentBuild>
   <builders>
 @(SNIPPET(
