@@ -50,6 +50,7 @@ if missed_jobs:
     branch_name=ros_buildfarm_repository.version or 'master',
     relative_target_dir='ros_buildfarm',
     refspec=None,
+    git_ssh_credential_id=git_ssh_credential_id,
 ))@
   <scmCheckoutRetryCount>2</scmCheckoutRetryCount>
   <!--assignedNode>agent_on_master</assignedNode-->
