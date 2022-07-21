@@ -58,7 +58,7 @@ if missed_jobs:
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers>
+  <!--triggers>
 @[if not missed_jobs]@
 @(SNIPPET(
     'trigger_timer',
@@ -70,7 +70,7 @@ if missed_jobs:
     spec='0 1 * * *',
 ))@
 @[end if]@
-  </triggers>
+  </triggers-->
   <concurrentBuild>false</concurrentBuild>
   <builders>
 @(SNIPPET(
